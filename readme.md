@@ -372,7 +372,6 @@ elif status_code == 429:
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 ```
-
 ### 🚨 Responsible Disclosure
 
 If you discover vulnerabilities using this tool:
@@ -383,43 +382,7 @@ If you discover vulnerabilities using this tool:
 
 ---
 
-## 🛡️ Defense Recommendations
 
-### For WordPress Administrators:
-
-#### 1️⃣ **Disable XML-RPC** (if not needed)
-```php
-// In wp-config.php or functions.php
-add_filter('xmlrpc_enabled', '__return_false');
-```
-
-#### 2️⃣ **Limit XML-RPC Access** (.htaccess)
-```apache
-<Files xmlrpc.php>
-  Order Deny,Allow
-  Deny from all
-  Allow from YOUR.IP.ADDRESS
-</Files>
-```
-
-#### 3️⃣ **Use Security Plugins**
-- **Wordfence**: Blocks brute force attempts
-- **iThemes Security**: Disables XML-RPC
-- **Sucuri**: WAF protection
-
-#### 4️⃣ **Strong Password Policy**
-- Minimum 16 characters
-- Mix of uppercase, lowercase, numbers, symbols
-- Use password managers
-- Enable 2FA
-
-#### 5️⃣ **Monitor Logs**
-```bash
-# Check for XML-RPC attacks
-grep "xmlrpc.php" /var/log/apache2/access.log | grep POST
-```
-
----
 
 ## 🤝 Contributing
 
