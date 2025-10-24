@@ -30,7 +30,7 @@
 
 ## 🎯 Overview
 
-**caosdev-xmlrpc-brute** is an advanced WordPress penetration testing tool that exploits XML-RPC's `system.multicall` functionality to perform **hyper-optimized** brute force attacks. Unlike traditional methods that test one password at a time, this tool batches **50-100 passwords per request**, making it **20-50x faster** than conventional approaches.
+**xmlrpc-bruteforce** is an advanced WordPress penetration testing tool that exploits XML-RPC's `system.multicall` functionality to perform **hyper-optimized** brute force attacks. Unlike traditional methods that test one password at a time, this tool batches **50-100 passwords per request**, making it **20-50x faster** than conventional approaches.
 
 ### ☕ Why This Tool?
 
@@ -98,16 +98,16 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/henriqqw/caosdev-xmlrpc-brute.git
+git clone https://github.com/henriqqw/XMLRPC-Bruteforce.git
 
 # Navigate to directory
-cd caosdev-xmlrpc-brute
+cd XMLRPC-Bruteforce-brute
 
 # Install dependencies
 pip3 install requests
 
 # Run the tool
-python3 xmlrpc_caosbrute.py --help
+python3 xmlrpc_bruteforce.py --help
 ```
 
 ### Requirements
@@ -124,7 +124,7 @@ requests >= 2.25.0
 ### 🎯 Basic Attack
 
 ```bash
-python3 xmlrpc_caosbrute.py https://target.com/xmlrpc.php \
+python3xmlrpc_bruteforce.py https://target.com/xmlrpc.php \
   -u admin \
   -w wordlist.txt
 ```
@@ -132,7 +132,7 @@ python3 xmlrpc_caosbrute.py https://target.com/xmlrpc.php \
 ### 🔥 Advanced Attack
 
 ```bash
-python3 xmlrpc_caosbrute.py https://target.com/xmlrpc.php \
+python3 xmlrpc_bruteforce.py https://target.com/xmlrpc.php \
   -u admin \
   -w rockyou.txt \
   --stop-on-success \
@@ -146,7 +146,7 @@ python3 xmlrpc_caosbrute.py https://target.com/xmlrpc.php \
 ### 🛡️ Stealth Mode (Evade WAF)
 
 ```bash
-python3 xmlrpc_caosbrute.py https://target.com/xmlrpc.php \
+python3 xmlrpc_bruteforce.py https://target.com/xmlrpc.php \
   -u admin \
   -w wordlist.txt \
   -b 25 \
@@ -285,7 +285,7 @@ Traditional brute force:
 </params>
 ```
 
-**caosdev-xmlrpc-brute:**
+**xmlrpc_bruteforce:**
 ```xml
 <!-- 50-100 passwords per request -->
 <methodName>system.multicall</methodName>
@@ -340,8 +340,8 @@ elif status_code == 429:
 | Method | Requests | Time | Speed |
 |--------|----------|------|-------|
 | **Traditional Brute Force** | 10,000 | ~83 min | 2 pass/sec |
-| **caosdev-xmlrpc-brute (b=50)** | 200 | ~2 min | 83 pass/sec |
-| **caosdev-xmlrpc-brute (b=100)** | 100 | ~1 min | 166 pass/sec |
+| **xmlrpc_bruteforce (b=50)** | 200 | ~2 min | 83 pass/sec |
+| **xmlrpc_bruteforce (b=100)** | 100 | ~1 min | 166 pass/sec |
 
 > **Note**: Times assume 0.5s delay between requests. Actual performance varies based on server response time and network latency.
 
@@ -426,14 +426,14 @@ grep "xmlrpc.php" /var/log/apache2/access.log | grep POST
 Contributions are welcome! Here's how you can help:
 
 ### 🐛 Bug Reports
-Found a bug? [Open an issue](https://github.com/henriqqw/caosdev-xmlrpc-brute/issues) with:
+Found a bug? [Open an issue](https://github.com/henriqqw/xmlrpc-bruteforce/issues) with:
 - Detailed description
 - Steps to reproduce
 - Expected vs actual behavior
 - System info (OS, Python version)
 
 ### ✨ Feature Requests
-Have an idea? [Submit a feature request](https://github.com/henriqqw/caosdev-xmlrpc-brute/issues) with:
+Have an idea? [Submit a feature request](https://github.com/henriqqw/xmlrpc-bruteforce/issues) with:
 - Clear use case
 - Expected behavior
 - Potential implementation approach
@@ -494,7 +494,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 
 ## 📈 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=henriqqw/caosdev-xmlrpc-brute&type=Date)](https://star-history.com/#henriqqw/caosdev-xmlrpc-brute&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=henriqqw/xmlrpc-bruteforce&type=Date)](https://star-history.com/#henriqqw/xmlrpc-bruteforce&Date)
 
 ---
 
